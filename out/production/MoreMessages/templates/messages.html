@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login to HelloSpark</title>
+</head>
+<body>
+<form action="/create-message" method="post">
+    <input type="text" placeholder="Enter your message" name="message" size="105" />
+    <button type ="submit">Enter</button>
+</form>
+
+<form action="/delete-message" method="post">
+    <input type="text" placeholder="Enter message number to delete message" name="delete" size="50"/>
+    <button type ="submit">Delete</button>
+</form>
+
+<form action="/edit-message" method="post">
+    <input type="text" placeholder="Enter message number to edit message" name="editNumber" size="50" />
+    <input type="text" placeholder="Enter new message text" name="editMessage" size="45" />
+    <button type ="submit">Edit</button>
+</form>
+
+</br>
+Messages
+<ol>
+    {{#messages}}
+    <li>{{.}}</li>
+{{/messages}}
+</ol>
+<form action="/logout" method="post">
+    <button type ="submit">Log out</button>
+</form>
+</body>
+</html>
